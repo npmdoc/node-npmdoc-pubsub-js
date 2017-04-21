@@ -1,0 +1,665 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a>pubsub-js (v1.5.6)</a>
+</h1>
+<h4>Dependency free publish/subscribe library</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.pubsub-js">module pubsub-js</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pubsub-js.clearAllSubscriptions">
+            function <span class="apidocSignatureSpan">pubsub-js.</span>clearAllSubscriptions
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pubsub-js.clearSubscriptions">
+            function <span class="apidocSignatureSpan">pubsub-js.</span>clearSubscriptions
+            <span class="apidocSignatureSpan">(topic)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pubsub-js.publish">
+            function <span class="apidocSignatureSpan">pubsub-js.</span>publish
+            <span class="apidocSignatureSpan">( message, data )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pubsub-js.publishSync">
+            function <span class="apidocSignatureSpan">pubsub-js.</span>publishSync
+            <span class="apidocSignatureSpan">( message, data )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pubsub-js.subscribe">
+            function <span class="apidocSignatureSpan">pubsub-js.</span>subscribe
+            <span class="apidocSignatureSpan">( message, func )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pubsub-js.unsubscribe">
+            function <span class="apidocSignatureSpan">pubsub-js.</span>unsubscribe
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">pubsub-js.</span>PubSub</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.pubsub-js.PubSub">module pubsub-js.PubSub</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pubsub-js.PubSub.clearAllSubscriptions">
+            function <span class="apidocSignatureSpan">pubsub-js.PubSub.</span>clearAllSubscriptions
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pubsub-js.PubSub.clearSubscriptions">
+            function <span class="apidocSignatureSpan">pubsub-js.PubSub.</span>clearSubscriptions
+            <span class="apidocSignatureSpan">(topic)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pubsub-js.PubSub.publish">
+            function <span class="apidocSignatureSpan">pubsub-js.PubSub.</span>publish
+            <span class="apidocSignatureSpan">( message, data )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pubsub-js.PubSub.publishSync">
+            function <span class="apidocSignatureSpan">pubsub-js.PubSub.</span>publishSync
+            <span class="apidocSignatureSpan">( message, data )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pubsub-js.PubSub.subscribe">
+            function <span class="apidocSignatureSpan">pubsub-js.PubSub.</span>subscribe
+            <span class="apidocSignatureSpan">( message, func )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pubsub-js.PubSub.unsubscribe">
+            function <span class="apidocSignatureSpan">pubsub-js.PubSub.</span>unsubscribe
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.pubsub-js" id="apidoc.module.pubsub-js">module pubsub-js</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.pubsub-js.clearAllSubscriptions" id="apidoc.element.pubsub-js.clearAllSubscriptions">
+        function <span class="apidocSignatureSpan">pubsub-js.</span>clearAllSubscriptions
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function clearAllSubscriptions(){
+		messages = {};
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// no further notications for 'a.b' and 'a.b.c' topics
+// notifications for 'a' will still get published
+```
+
+### Clear all subscriptions
+
+```javascript
+PubSub.<span class="apidocCodeKeywordSpan">clearAllSubscriptions</span>();
+// all subscriptions are removed
+```
+
+### Hierarchical addressing
+
+```javascript
+// create a subscriber to receive all topics from a hierarchy of topics
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pubsub-js.clearSubscriptions" id="apidoc.element.pubsub-js.clearSubscriptions">
+        function <span class="apidocSignatureSpan">pubsub-js.</span>clearSubscriptions
+        <span class="apidocSignatureSpan">(topic)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function clearSubscriptions(topic){
+		var m;
+		for (m in messages){
+			if (messages.hasOwnProperty(m) &amp;&amp; m.indexOf(topic) === 0){
+				delete messages[m];
+			}
+		}
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pubsub-js.publish" id="apidoc.element.pubsub-js.publish">
+        function <span class="apidocSignatureSpan">pubsub-js.</span>publish
+        <span class="apidocSignatureSpan">( message, data )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">publish = function ( message, data ){
+		return publish( message, data, false, PubSub.immediateExceptions );
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// add the function to the list of subscribers for a particular topic
+// we're keeping the returned token, in order to be able to unsubscribe
+// from the topic later on
+var token = PubSub.subscribe( 'MY TOPIC', mySubscriber );
+
+// publish a topic asyncronously
+PubSub.<span class="apidocCodeKeywordSpan">publish</span>( 'MY TOPIC', 'hello world!' );
+
+// publish a topic syncronously, which is faster in some environments,
+// but will get confusing when one topic triggers new topics in the
+// same execution chain
+// USE WITH CAUTION, HERE BE DRAGONS!!!
+PubSub.publishSync( 'MY TOPIC', 'hello world!' );
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pubsub-js.publishSync" id="apidoc.element.pubsub-js.publishSync">
+        function <span class="apidocSignatureSpan">pubsub-js.</span>publishSync
+        <span class="apidocSignatureSpan">( message, data )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">publishSync = function ( message, data ){
+		return publish( message, data, true, PubSub.immediateExceptions );
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// publish a topic asyncronously
+PubSub.publish( 'MY TOPIC', 'hello world!' );
+
+// publish a topic syncronously, which is faster in some environments,
+// but will get confusing when one topic triggers new topics in the
+// same execution chain
+// USE WITH CAUTION, HERE BE DRAGONS!!!
+PubSub.<span class="apidocCodeKeywordSpan">publishSync</span>( 'MY TOPIC', 'hello world!' );
+```
+
+### Cancel specific subscription
+
+```javascript
+// create a function to receive the topic
+var mySubscriber = function( msg, data ){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pubsub-js.subscribe" id="apidoc.element.pubsub-js.subscribe">
+        function <span class="apidocSignatureSpan">pubsub-js.</span>subscribe
+        <span class="apidocSignatureSpan">( message, func )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">subscribe = function ( message, func ){
+		if ( typeof func !== 'function'){
+			return false;
+		}
+
+		// message is not registered yet
+		if ( !messages.hasOwnProperty( message ) ){
+			messages[message] = {};
+		}
+
+		// forcing token as String, to allow for future expansions without breaking usage
+		// and allow for easy use as key names for the 'messages' object
+		var token = 'uid_' + String(++lastUid);
+		messages[message][token] = func;
+
+		// return token for unsubscribing
+		return token;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var mySubscriber = function( msg, data ){
+    console.log( msg, data );
+};
+
+// add the function to the list of subscribers for a particular topic
+// we're keeping the returned token, in order to be able to unsubscribe
+// from the topic later on
+var token = PubSub.<span class="apidocCodeKeywordSpan">subscribe</span>( 'MY TOPIC', mySubscriber );
+
+// publish a topic asyncronously
+PubSub.publish( 'MY TOPIC', 'hello world!' );
+
+// publish a topic syncronously, which is faster in some environments,
+// but will get confusing when one topic triggers new topics in the
+// same execution chain
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pubsub-js.unsubscribe" id="apidoc.element.pubsub-js.unsubscribe">
+        function <span class="apidocSignatureSpan">pubsub-js.</span>unsubscribe
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unsubscribe = function (value){
+		var descendantTopicExists = function(topic) {
+				var m;
+				for ( m in messages ){
+					if ( messages.hasOwnProperty(m) &amp;&amp; m.indexOf(topic) === 0 ){
+						// a descendant of the topic exists:
+						return true;
+					}
+				}
+
+				return false;
+			},
+			isTopic    = typeof value === 'string' &amp;&amp; ( messages.hasOwnProperty(value) || descendantTopicExists(value) ),
+			isToken    = !isTopic &amp;&amp; typeof value === 'string',
+			isFunction = typeof value === 'function',
+			result = false,
+			m, message, t;
+
+		if (isTopic){
+			PubSub.clearSubscriptions(value);
+			return;
+		}
+
+		for ( m in messages ){
+			if ( messages.hasOwnProperty( m ) ){
+				message = messages[m];
+
+				if ( isToken &amp;&amp; message[value] ){
+					delete message[value];
+					result = value;
+					// tokens are unique, so we can just stop here
+					break;
+				}
+
+				if (isFunction) {
+					for ( t in message ){
+						if (message.hasOwnProperty(t) &amp;&amp; message[t] === value){
+							delete message[t];
+							result = true;
+						}
+					}
+				}
+			}
+		}
+
+		return result;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// add the function to the list of subscribers to a particular topic
+// we're keeping the returned token, in order to be able to unsubscribe
+// from the topic later on
+var token = PubSub.subscribe( 'MY TOPIC', mySubscriber );
+
+// unsubscribe this subscriber from this topic
+PubSub.<span class="apidocCodeKeywordSpan">unsubscribe</span>( token );
+```
+
+### Cancel all subscriptions for a function
+
+```javascript
+// create a function to receive the topic
+var mySubscriber = function( msg, data ){
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.pubsub-js.PubSub" id="apidoc.module.pubsub-js.PubSub">module pubsub-js.PubSub</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.pubsub-js.PubSub.clearAllSubscriptions" id="apidoc.element.pubsub-js.PubSub.clearAllSubscriptions">
+        function <span class="apidocSignatureSpan">pubsub-js.PubSub.</span>clearAllSubscriptions
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function clearAllSubscriptions(){
+		messages = {};
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// no further notications for 'a.b' and 'a.b.c' topics
+// notifications for 'a' will still get published
+```
+
+### Clear all subscriptions
+
+```javascript
+PubSub.<span class="apidocCodeKeywordSpan">clearAllSubscriptions</span>();
+// all subscriptions are removed
+```
+
+### Hierarchical addressing
+
+```javascript
+// create a subscriber to receive all topics from a hierarchy of topics
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pubsub-js.PubSub.clearSubscriptions" id="apidoc.element.pubsub-js.PubSub.clearSubscriptions">
+        function <span class="apidocSignatureSpan">pubsub-js.PubSub.</span>clearSubscriptions
+        <span class="apidocSignatureSpan">(topic)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function clearSubscriptions(topic){
+		var m;
+		for (m in messages){
+			if (messages.hasOwnProperty(m) &amp;&amp; m.indexOf(topic) === 0){
+				delete messages[m];
+			}
+		}
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pubsub-js.PubSub.publish" id="apidoc.element.pubsub-js.PubSub.publish">
+        function <span class="apidocSignatureSpan">pubsub-js.PubSub.</span>publish
+        <span class="apidocSignatureSpan">( message, data )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">publish = function ( message, data ){
+		return publish( message, data, false, PubSub.immediateExceptions );
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// add the function to the list of subscribers for a particular topic
+// we're keeping the returned token, in order to be able to unsubscribe
+// from the topic later on
+var token = PubSub.subscribe( 'MY TOPIC', mySubscriber );
+
+// publish a topic asyncronously
+PubSub.<span class="apidocCodeKeywordSpan">publish</span>( 'MY TOPIC', 'hello world!' );
+
+// publish a topic syncronously, which is faster in some environments,
+// but will get confusing when one topic triggers new topics in the
+// same execution chain
+// USE WITH CAUTION, HERE BE DRAGONS!!!
+PubSub.publishSync( 'MY TOPIC', 'hello world!' );
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pubsub-js.PubSub.publishSync" id="apidoc.element.pubsub-js.PubSub.publishSync">
+        function <span class="apidocSignatureSpan">pubsub-js.PubSub.</span>publishSync
+        <span class="apidocSignatureSpan">( message, data )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">publishSync = function ( message, data ){
+		return publish( message, data, true, PubSub.immediateExceptions );
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// publish a topic asyncronously
+PubSub.publish( 'MY TOPIC', 'hello world!' );
+
+// publish a topic syncronously, which is faster in some environments,
+// but will get confusing when one topic triggers new topics in the
+// same execution chain
+// USE WITH CAUTION, HERE BE DRAGONS!!!
+PubSub.<span class="apidocCodeKeywordSpan">publishSync</span>( 'MY TOPIC', 'hello world!' );
+```
+
+### Cancel specific subscription
+
+```javascript
+// create a function to receive the topic
+var mySubscriber = function( msg, data ){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pubsub-js.PubSub.subscribe" id="apidoc.element.pubsub-js.PubSub.subscribe">
+        function <span class="apidocSignatureSpan">pubsub-js.PubSub.</span>subscribe
+        <span class="apidocSignatureSpan">( message, func )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">subscribe = function ( message, func ){
+		if ( typeof func !== 'function'){
+			return false;
+		}
+
+		// message is not registered yet
+		if ( !messages.hasOwnProperty( message ) ){
+			messages[message] = {};
+		}
+
+		// forcing token as String, to allow for future expansions without breaking usage
+		// and allow for easy use as key names for the 'messages' object
+		var token = 'uid_' + String(++lastUid);
+		messages[message][token] = func;
+
+		// return token for unsubscribing
+		return token;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var mySubscriber = function( msg, data ){
+    console.log( msg, data );
+};
+
+// add the function to the list of subscribers for a particular topic
+// we're keeping the returned token, in order to be able to unsubscribe
+// from the topic later on
+var token = PubSub.<span class="apidocCodeKeywordSpan">subscribe</span>( 'MY TOPIC', mySubscriber );
+
+// publish a topic asyncronously
+PubSub.publish( 'MY TOPIC', 'hello world!' );
+
+// publish a topic syncronously, which is faster in some environments,
+// but will get confusing when one topic triggers new topics in the
+// same execution chain
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pubsub-js.PubSub.unsubscribe" id="apidoc.element.pubsub-js.PubSub.unsubscribe">
+        function <span class="apidocSignatureSpan">pubsub-js.PubSub.</span>unsubscribe
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unsubscribe = function (value){
+		var descendantTopicExists = function(topic) {
+				var m;
+				for ( m in messages ){
+					if ( messages.hasOwnProperty(m) &amp;&amp; m.indexOf(topic) === 0 ){
+						// a descendant of the topic exists:
+						return true;
+					}
+				}
+
+				return false;
+			},
+			isTopic    = typeof value === 'string' &amp;&amp; ( messages.hasOwnProperty(value) || descendantTopicExists(value) ),
+			isToken    = !isTopic &amp;&amp; typeof value === 'string',
+			isFunction = typeof value === 'function',
+			result = false,
+			m, message, t;
+
+		if (isTopic){
+			PubSub.clearSubscriptions(value);
+			return;
+		}
+
+		for ( m in messages ){
+			if ( messages.hasOwnProperty( m ) ){
+				message = messages[m];
+
+				if ( isToken &amp;&amp; message[value] ){
+					delete message[value];
+					result = value;
+					// tokens are unique, so we can just stop here
+					break;
+				}
+
+				if (isFunction) {
+					for ( t in message ){
+						if (message.hasOwnProperty(t) &amp;&amp; message[t] === value){
+							delete message[t];
+							result = true;
+						}
+					}
+				}
+			}
+		}
+
+		return result;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// add the function to the list of subscribers to a particular topic
+// we're keeping the returned token, in order to be able to unsubscribe
+// from the topic later on
+var token = PubSub.subscribe( 'MY TOPIC', mySubscriber );
+
+// unsubscribe this subscriber from this topic
+PubSub.<span class="apidocCodeKeywordSpan">unsubscribe</span>( token );
+```
+
+### Cancel all subscriptions for a function
+
+```javascript
+// create a function to receive the topic
+var mySubscriber = function( msg, data ){
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
